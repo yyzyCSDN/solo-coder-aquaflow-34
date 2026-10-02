@@ -5,4 +5,4 @@ class Revision:
 def at(sequence:int,rows:list[Revision]):
     xs=[r for r in rows if r.sequence<=sequence]
     if not xs:raise ValueError("no revision")
-    return max(rows,key=lambda r:(r.sequence,r.revision))
+    return max(xs,key=lambda r:(r.sequence,r.revision))
